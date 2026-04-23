@@ -1,0 +1,282 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A6EB9955-9391-44EC-8F48-17D10F0923C1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebTrangSuc_DaiDu</RootNamespace>
+    <AssemblyName>WebTrangSuc_DaiDu</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44360</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin.aspx" />
+    <Content Include="AdminHub.aspx" />
+    <Content Include="App_Data\QUANLYTRANGSUC.accdb" />
+    <Content Include="chitiet.aspx" />
+    <Content Include="CSS\Theme\banthuong\tc1.css" />
+    <Content Include="CSS\Theme\giangsinh\tc1.css" />
+    <Content Include="CSS\Theme\le304\tc1.css" />
+    <Content Include="Dangky.aspx" />
+    <Content Include="DangNhap.aspx" />
+    <Content Include="giohang.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="IMAGES\Avatar\Admin.jpg" />
+    <Content Include="IMAGES\Sanpham\bach-duong.jpg" />
+    <Content Include="IMAGES\Sanpham\bao-binh.jpg" />
+    <Content Include="IMAGES\Sanpham\bo-da-quy.jpg" />
+    <Content Include="IMAGES\Sanpham\bo-trang-suc-luc-bao.jpg" />
+    <Content Include="IMAGES\Sanpham\bong-tai-hong.jpg" />
+    <Content Include="IMAGES\Sanpham\bong-tai-ngoi-sao.jpg" />
+    <Content Include="IMAGES\Sanpham\chia-khoa.jpg" />
+    <Content Include="IMAGES\Sanpham\cu-giai.jpg" />
+    <Content Include="IMAGES\Sanpham\day-chuyen-2.jpg" />
+    <Content Include="IMAGES\Sanpham\day-chuyen-3.jpg" />
+    <Content Include="IMAGES\Sanpham\day-chuyen-4.jpg" />
+    <Content Include="IMAGES\Sanpham\day-chuyen-buom.jpg" />
+    <Content Include="IMAGES\Sanpham\day-chuyen-loc-xoay.jpg" />
+    <Content Include="IMAGES\Sanpham\day-chuyen-rong.jpg" />
+    <Content Include="IMAGES\Sanpham\day-chuyen.jpg" />
+    <Content Include="IMAGES\Sanpham\daychuyen.jpg" />
+    <Content Include="IMAGES\Sanpham\khuyen-day-bong.jpg" />
+    <Content Include="IMAGES\Sanpham\khuyen-tai-1.jpg" />
+    <Content Include="IMAGES\Sanpham\khuyentai.jpg" />
+    <Content Include="IMAGES\Sanpham\kim-nguu.jpg" />
+    <Content Include="IMAGES\Sanpham\lac-tay-2.jpg" />
+    <Content Include="IMAGES\Sanpham\lac-tay.jpg" />
+    <Content Include="IMAGES\Sanpham\ma-ket.jpg" />
+    <Content Include="IMAGES\Sanpham\NGON-GIUA.jpg" />
+    <Content Include="IMAGES\Sanpham\nhan-bong-hong.jpg" />
+    <Content Include="IMAGES\Sanpham\nhan-ma.jpg" />
+    <Content Include="IMAGES\Sanpham\Ophiuchus.jpg" />
+    <Content Include="IMAGES\Sanpham\song-ngu.jpg" />
+    <Content Include="IMAGES\Sanpham\song-tu.jpg" />
+    <Content Include="IMAGES\Sanpham\su-tu.jpg" />
+    <Content Include="IMAGES\Sanpham\thanh-gia.jpg" />
+    <Content Include="IMAGES\Sanpham\thien-binh.jpg" />
+    <Content Include="IMAGES\Sanpham\thien-yet.jpg" />
+    <Content Include="IMAGES\Sanpham\vong-tay-la-cay.jpg" />
+    <Content Include="IMAGES\Sanpham\vong-tay.jpg" />
+    <Content Include="IMAGES\Sanpham\xu-nu.jpg" />
+    <Content Include="IMAGES\Theme\banthuong\candy_fix.png" />
+    <Content Include="IMAGES\Theme\banthuong\LOGO.png" />
+    <Content Include="IMAGES\Theme\banthuong\wreath_fix.png" />
+    <Content Include="IMAGES\Theme\banthuong\icon-trangtri.png" />
+    <Content Include="IMAGES\Theme\giangsinh\candy_fix.png" />
+    <Content Include="IMAGES\Theme\giangsinh\icon-trangtri.png" />
+    <Content Include="IMAGES\Theme\giangsinh\LOGO.png" />
+    <Content Include="IMAGES\Theme\giangsinh\wreath_fix.png" />
+    <Content Include="IMAGES\Theme\le304\wreath_fix.png" />
+    <Content Include="IMAGES\Theme\le304\icon-trangtri.png" />
+    <Content Include="IMAGES\Theme\le304\LOGO.png" />
+    <Content Include="IMAGES\Theme\le304\candy_fix.png" />
+    <Content Include="index.aspx" />
+    <Content Include="lienhe.aspx" />
+    <Content Include="sanpham.aspx" />
+    <Content Include="admin.css" />
+    <Content Include="TrangCaNhan.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHub.aspx.cs">
+      <DependentUpon>AdminHub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminHub.aspx.designer.cs">
+      <DependentUpon>AdminHub.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chitiet.aspx.cs">
+      <DependentUpon>chitiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chitiet.aspx.designer.cs">
+      <DependentUpon>chitiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dangky.aspx.cs">
+      <DependentUpon>Dangky.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dangky.aspx.designer.cs">
+      <DependentUpon>Dangky.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.aspx.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangNhap.aspx.designer.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="giohang.aspx.cs">
+      <DependentUpon>giohang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="giohang.aspx.designer.cs">
+      <DependentUpon>giohang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lienhe.aspx.cs">
+      <DependentUpon>lienhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lienhe.aspx.designer.cs">
+      <DependentUpon>lienhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminModel.cs" />
+    <Compile Include="Models\BoNaoDuLieu.cs" />
+    <Compile Include="Models\FlashCoreModel.cs" />
+    <Compile Include="Models\HeThongNangModel.cs" />
+    <Compile Include="Models\GioHangModel.cs" />
+    <Compile Include="Models\TaiKhoanModel.cs" />
+    <Compile Include="Models\ThongBaoModel.cs" />
+    <Compile Include="Models\TroLyAI.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sanpham.aspx.cs">
+      <DependentUpon>sanpham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sanpham.aspx.designer.cs">
+      <DependentUpon>sanpham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TrangCaNhan.aspx.cs">
+      <DependentUpon>TrangCaNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangCaNhan.aspx.designer.cs">
+      <DependentUpon>TrangCaNhan.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".vscode\settings.json" />
+    <None Include="packages.config" />
+    <Content Include="Site.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60554</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44360/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+</Project>

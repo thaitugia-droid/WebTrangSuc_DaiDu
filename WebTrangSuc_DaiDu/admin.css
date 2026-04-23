@@ -1,0 +1,418 @@
+﻿/* ================= BỐ CỤC CHUNG ADMIN ================= */
+body {
+    background-color: #f4f7f6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-wrapper {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+/* ================= CHIA LÔ 2 CỘT (FORM & DANH MỤC) ================= */
+.admin-top-section {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.admin-form-col {
+    flex: 7;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.admin-category-col {
+    flex: 3;
+    background: #FDF8F9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #d18b9b;
+    position: sticky;
+    top: 20px;
+}
+/* ================= ĐỊNH DẠNG FORM NHẬP LIỆU ================= */
+.admin-form-col h3 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.admin-category-col h3 {
+    color: #A86273;
+    text-align: center;
+    margin-top: 0;
+}
+
+.admin-category-col p {
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.btn-submit {
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+    .btn-submit:hover {
+        background-color: #34495e;
+    }
+/* ================= ĐỊNH DẠNG BẢNG (GRIDVIEW) ================= */
+.grid-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+    margin-bottom: 50px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.grid-title-order {
+    color: #A86273;
+    border-bottom: 2px solid #A86273;
+    padding-bottom: 10px;
+}
+
+.myGridView {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+    .myGridView th {
+        background-color: #A86273;
+        color: white;
+        padding: 15px;
+    }
+
+    .myGridView td {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .myGridView tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+/* ================= KHU VỰC THÊM DANH MỤC MỚI ================= */
+.khu-vuc-them-dm {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #d18b9b;
+}
+
+.tieu-de-them-dm {
+    color: #A86273;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dm-group {
+    margin-bottom: 15px;
+}
+
+.dm-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.btn-submit-dm {
+    width: 100%;
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-submit-dm:hover {
+        background-color: #34495e;
+    }
+/* ================= CSS CHO CỘT HÌNH ẢNH ================= */
+.img-sp-nho {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.file-up-edit {
+    width: 100%;
+    font-size: 12px;
+    padding: 5px;
+    border: 1px dashed #ccc;
+    background-color: #f9f9f9;
+}
+
+.ghi-chu-anh {
+    font-size: 11px;
+    color: #e74c3c;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* ================= NÚT VÀ BẢNG CHI TIẾT ĐƠN HÀNG ================= */
+.btn-gold {
+    display: inline-block;
+    padding: 5px 12px;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    background-color: #C19A6B;
+    color: #fff !important;
+    transition: 0.3s;
+}
+
+    .btn-gold:hover {
+        background-color: #a8855a;
+    }
+
+.chi-tiet-don-hang-container {
+    margin-top: 40px;
+    background-color: #121212;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #C19A6B;
+}
+
+    .chi-tiet-don-hang-container h3 {
+        color: #C19A6B;
+        margin-bottom: 20px;
+        font-family: 'Playfair Display', serif;
+        text-transform: uppercase;
+    }
+
+.grid-chi-tiet {
+    width: 100%;
+    border-collapse: collapse;
+    color: #F8F8F8;
+}
+
+    .grid-chi-tiet th {
+        background-color: #050505;
+        color: #C19A6B;
+        height: 45px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .grid-chi-tiet td {
+        height: 80px;
+        text-align: center;
+        border-bottom: 1px solid #333;
+    }
+
+.img-chi-tiet {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+.empty-data-msg {
+    text-align: center;
+    padding: 20px;
+    color: #B0B0B0;
+}
+
+.btn-ve-trang-chu {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #C19A6B;
+    color: #130303 !important;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid #C19A6B;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+    .btn-ve-trang-chu:hover {
+        background-color: #8b0000;
+        color: #FFF !important;
+        border-color: #8b0000;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(139, 0, 0, 0.4);
+    }
+
+/* ================= PHÂN HỆ QUẢN LÝ ĐƠN HÀNG V5 (TÌM KIẾM & RADAR) ================= */
+.order-management-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fdf8f9;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #d18b9b;
+    margin-bottom: 20px;
+}
+
+.order-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Chấm xanh nháy báo hiệu Radar đang chạy */
+.live-indicator {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+    .live-indicator .dot {
+        width: 8px;
+        height: 8px;
+        background: #4caf50;
+        border-radius: 50%;
+        animation: pulse-green 2s infinite;
+    }
+
+@keyframes pulse-green {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(76, 175, 80, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
+
+/* Thanh công cụ tìm kiếm chuẩn Dashboard */
+.order-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box-v5 {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+    .search-box-v5:focus-within {
+        border-color: #A86273;
+        box-shadow: 0 0 0 3px rgba(168, 98, 115, 0.1);
+    }
+
+    .search-box-v5 i {
+        color: #adb5bd;
+        font-size: 14px;
+    }
+
+    .search-box-v5 input {
+        border: none;
+        background: transparent;
+        padding: 10px;
+        outline: none;
+        width: 250px;
+        font-size: 14px;
+        color: #495057;
+    }
+
+.btn-search-v5 {
+    background: #A86273;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .btn-search-v5:hover {
+        background: #8e4f5e;
+        transform: translateY(-1px);
+    }
+
+.btn-refresh-v5 {
+    color: #6c757d;
+    background: #ffffff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    transition: 0.3s;
+}
+
+    .btn-refresh-v5:hover {
+        color: #A86273;
+        transform: rotate(90deg);
+    }

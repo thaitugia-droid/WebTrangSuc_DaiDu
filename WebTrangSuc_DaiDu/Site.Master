@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebTrangSuc_DaiDu.Site" %>
+<!DOCTYPE html>
+<html lang="vi">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <title>Trang Sức ĐẠI DU - Trạm Chỉ Huy Mariana</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link id="themeCss" runat="server" rel="stylesheet" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+        function ThongBaoTuCodeBehind(loai, tieuDe, noiDung) {
+            Swal.fire({
+                title: tieuDe, text: noiDung, icon: loai,
+                confirmButtonColor: loai === 'success' ? '#00FFD1' : '#ff0055',
+                background: '#0B1D51', color: '#fff'
+            });
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+    <style>
+        /* CHỐNG NHẢY GIAO DIỆN ADMIN */
+        .nhan-mac-vip { position: absolute; top: 10px; left: -5px; padding: 5px 15px; font-size: 13px; font-weight: 900; border-radius: 0 15px 15px 0; z-index: 10; text-transform: uppercase; box-shadow: 0 4px 10px rgba(0,0,0,0.3); animation: nhipTimbadge 2s infinite; background: linear-gradient(45deg, #00FFD1, #0B1D51); color: #fff; }
+        @keyframes nhipTimbadge { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        #btnGoiAdminV5 { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: linear-gradient(135deg, #0B1D51, #00FFD1); border-radius: 50%; cursor: pointer; z-index: 9999999 !important; border: 2px solid #fff; box-shadow: 0 5px 20px rgba(0, 255, 209, 0.4); display: flex; align-items: center; justify-content: center; }
+        #btnGoiAdminV5:hover { transform: scale(1.1) rotate(-5deg); box-shadow: 0 8px 30px #00FFD1; }
+        .royal-crown-icon { color: #fff; font-size: 30px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)); }
+        #khungAdminV5 { display: none; position: fixed; bottom: 90px; right: 20px; width: 300px; height: 420px; z-index: 9999998 !important; border-radius: 12px; box-shadow: 0 15px 50px rgba(0,0,0,0.7); overflow: hidden; border: 1px solid #00FFD1; transform-origin: bottom right; transition: all 0.4s ease; opacity: 0; transform: scale(0.8); }
+        #khungAdminV5.show-panel { display: block; opacity: 1; transform: scale(1); }
+        
+        /* HOẠT ẢNH AVATAR CHUẨN SHOPEE */
+        .avatar-header { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #00FFD1; object-fit: cover; box-shadow: 0 0 10px rgba(0,255,209,0.4); transition: transform 0.2s; }
+        .avatar-header:hover { transform: scale(1.1); }
+    </style>
+</head>
+
+<body class="theme-daiduong"> 
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+        <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+
+        <header class="main-header">
+            <div class="logo">
+                <a href="index.aspx">
+                    <asp:Image ID="imgLogo" runat="server" CssClass="header-logo-img" ImageUrl="~/IMAGES/Theme/banthuong/LOGO.png" AlternateText="Logo Đại Du" />
+                </a>
+            </div>
+            
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="index.aspx">Trang chủ</a></li>
+                    <li><a href="sanpham.aspx">Sản phẩm</a></li>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="lienhe.aspx">Liên hệ</a></li>
+                    <asp:PlaceHolder ID="phMenuAdmin" runat="server" Visible="false">
+                        <li><a href="Admin.aspx" style="color: #00FFD1; font-weight: 800;"><i class="fa-solid fa-crown"></i> QUẢN TRỊ</a></li>
+                    </asp:PlaceHolder>
+                </ul>
+            </nav>
+
+            <div class="header-icons" style="display:flex; align-items:center; gap:20px;">
+                <i class="fa-solid fa-magnifying-glass" title="Tìm kiếm" style="color: #00FFD1; font-size: 20px; cursor: pointer;"></i>
+                
+                <asp:PlaceHolder ID="phDaDangNhap" runat="server" Visible="false">
+                    <a href="giohang.aspx" style="position: relative; color: #FFD700; font-size: 24px; text-decoration: none; transition: 0.3s; text-shadow: 0 0 10px rgba(255,215,0,0.5);" title="Giỏ hàng">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span style="position: absolute; top: -5px; right: -8px; background: #ff4757; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #0B1D51;"></span>
+                    </a>
+                    
+                    <a href="TrangCaNhan.aspx" style="display:block; text-decoration:none;" title="Trang Cá Nhân & Ví">
+                        <asp:Image ID="imgAvatar" runat="server" CssClass="avatar-header" />
+                    </a>
+
+                    <asp:LinkButton ID="btnDangXuatKhach" runat="server" OnClick="btnDangXuatKhach_Click" style="color: #ff4757; font-size: 22px; transition: 0.3s;" title="Đăng Xuất">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </asp:LinkButton>
+                </asp:PlaceHolder>
+
+                <asp:PlaceHolder ID="phChuaDangNhap" runat="server" Visible="true">
+                    <a href="giohang.aspx" style="color: #FFD700; font-size: 24px; text-decoration: none; text-shadow: 0 0 10px rgba(255,215,0,0.5);" title="Giỏ Hàng">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <a href="DangNhap.aspx" style="color: #00FFD1; font-size: 24px; text-decoration: none;" title="Đăng Nhập">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </asp:PlaceHolder>
+            </div>
+        </header>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+
+        <footer class="main-footer">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Trang Sức ĐẠI DU</h3>
+                    <p>Tôn vinh vẻ đẹp đích thực từ biển sâu Mariana. Đẳng cấp - Sang trọng - Bảo mật.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên Kết</h3>
+                    <ul>
+                        <li><a href="index.aspx">Trang chủ</a></li>
+                        <li><a href="sanpham.aspx">Sản phẩm</a></li>
+                        <li><a href="#">Bảo mật & Điều khoản</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Kết nối</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> Xã Đồng Bằng, tỉnh Hưng Yên</p>
+                    <p><i class="fa-solid fa-phone"></i> 0905052009</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Đại Du - Sàn trang sức giới trẻ cao cấp.</p>
+            </div>
+        </footer>
+
+        <asp:PlaceHolder ID="phGodMode" runat="server" Visible="false">
+            <div id="btnGoiAdminV5" onclick="toggleAdminTrangV5()" title="Mở Dashboard Quản Trị">
+                <i class="fa-solid fa-crown royal-crown-icon"></i>
+            </div>
+            <div id="khungAdminV5">
+                <iframe src="AdminHub.aspx?v=<%= DateTime.Now.Ticks %>" style="width: 100%; height: 100%; border: none; background: #0B1D51;"></iframe>
+            </div>
+            <script>
+                function toggleAdminTrangV5() {
+                    document.getElementById('khungAdminV5').classList.toggle('show-panel');
+                }
+            </script>
+        </asp:PlaceHolder>
+    </form>
+</body>
+</html>
