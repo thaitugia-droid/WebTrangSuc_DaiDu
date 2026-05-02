@@ -76,21 +76,27 @@
             </asp:Repeater>
         </div>
     </section>
+    <!-- Nút bấm giờ sẽ kiêm chức năng 'Về Trang 1' -->
+<button type="button" onclick="quayVeTrang1()" id="btnBackToTop" title="Quay về trang đầu tiên">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
 
-    <button onclick="lenDauTrang()" id="btnBackToTop" title="Lên đỉnh Mariana"><i class="fa-solid fa-arrow-up"></i></button>
+<script>
+    // JS điều khiển hiện/ẩn nút khi cuộn chuột
+    window.onscroll = function () { cuonTrang() };
+    function cuonTrang() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            document.getElementById("btnBackToTop").style.display = "block";
+        } else {
+            document.getElementById("btnBackToTop").style.display = "none";
+        }
+    }
 
-    <script>
-        // JS điều khiển nút lơ lửng
-        window.onscroll = function() { cuonTrang() };
-        function cuonTrang() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                document.getElementById("btnBackToTop").style.display = "block";
-            } else {
-                document.getElementById("btnBackToTop").style.display = "none";
-            }
-        }
-        function lenDauTrang() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
+    // Hàm 'Method B' của sếp đây: Bấm là bay về trang 1
+    function quayVeTrang1() {
+        // Chuyển hướng trình duyệt về trang sanpham.aspx không kèm tham số ?trang
+        // Code Behind của sếp sẽ tự động hiểu đây là Trang 1
+        window.location.href = 'sanpham.aspx';
+    }
+</script>
 </asp:Content>

@@ -167,7 +167,7 @@ namespace WebTrangSuc_DaiDu.Models
             DataTable dt = new DataTable();
             using (SqlConnection k = new SqlConnection(BoNaoDuLieu.LayChuoiKetNoi()))
             {
-                string sql = "SELECT CT.MaSP, SP.TenSP, SP.HinhAnh, CT.SoLuongMua, CT.Dongia, (CT.SoLuongMua * CT.Dongia) AS ThanhTien " +
+                string sql = "SELECT CT.MaSP, SP.TenSP, SP.HinhAnh, CT.SoLuong, CT.Dongia, (CT.SoLuong * CT.Dongia) AS ThanhTien " +
                              "FROM CHITIETHOADON CT INNER JOIN SANPHAM SP ON CT.MaSP = SP.MaSP WHERE CT.MaHD = @Ma";
                 using (SqlCommand c = new SqlCommand(sql, k))
                 {

@@ -233,6 +233,8 @@
     <Content Include=".vscode\settings.json" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
+    <None Include="Properties\PublishProfiles\webdaidu-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\webdaidu-001-site1 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -267,9 +267,11 @@
                         <asp:BoundField DataField="MaSP" HeaderText="Mã SP" />
                         <asp:BoundField DataField="TenSP" HeaderText="Tên Sản Phẩm" />
                         <asp:TemplateField HeaderText="Hình Ảnh">
-                            <ItemTemplate><img src='IMAGES/<%# Eval("HinhAnh") %>' loading="lazy" alt="Ảnh SP" class="img-chi-tiet" style="width:60px; height:60px; object-fit:cover; border-radius:5px;" /></ItemTemplate>
+                            <ItemTemplate>
+                                <img src='<%# ResolveUrl("~/IMAGES/Sanpham/" + Eval("HinhAnh")) %>' loading="lazy" alt="Ảnh SP" class="img-chi-tiet" style="width:60px; height:60px; object-fit:cover; border-radius:5px;" />
+                            </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="SoLuongMua" HeaderText="Số Lượng" />
+                        <asp:BoundField DataField="SoLuong" HeaderText="Số Lượng" />
                         <asp:BoundField DataField="Dongia" HeaderText="Đơn Giá" DataFormatString="{0:N0} VNĐ" />
                         <asp:BoundField DataField="ThanhTien" HeaderText="Thành Tiền" DataFormatString="{0:N0} VNĐ" />
                     </Columns>
